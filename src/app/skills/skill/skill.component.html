@@ -1,0 +1,35 @@
+<div class="skill-card-wrapper"> 
+    <div class="skill-card" [class.flipped]="isShowingProjects()" (click)="toggleProjects()"> 
+
+        <!-- FRONT -->
+        <div class="skill-overview">
+            <h2 class="skill-title">{{ name }}</h2>
+            <h4>{{ description }}</h4>
+
+            @if (projects && projects.length > 0) {
+                <button >Relevant Projects</button>
+            }
+        </div>
+
+        <!-- BACK -->
+        <div class="skill-projects" [style.background-image]="'url(' + projectsBackground + ')'">
+            <!-- -->
+            <h2 class="skill-title">{{ name }}</h2>
+            <p>Projects:</p>
+
+            <ul>
+            @for (project of projects; track project.name) {
+                <li>
+                <a [href]="project.url" target="_blank" (mouseenter)="setProjectsBackground(project.image)" (mouseleave)="resetProjectsBackground()">
+                    <!-- {{ project.url.split('/').slice(-1)[0] }} -->
+                      {{ project.name }}
+                </a>
+                </li>
+            }
+            </ul>
+
+            <button>Back</button>
+        </div>
+
+    </div>
+</div>

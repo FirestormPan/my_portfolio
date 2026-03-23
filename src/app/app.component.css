@@ -1,0 +1,61 @@
+.main-layout {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 1fr auto;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.welcome{
+    grid-row: 1;
+    grid-column: 1 / span 3;
+  
+    font-size: 18px;
+
+}
+
+.profile-picture{
+    width: 30vh;
+    height: 30vh;
+
+    border-radius: 50%;
+    border: 2px solid slateblue;
+    padding: 3px;
+
+    margin-right: 10px;
+    margin-left: 2vw;
+    margin-top: 7px;
+
+    /* text wrapped arround */
+    shape-outside: ellipse();
+    float: left;
+}
+
+.general{
+    grid-row: 1;
+    grid-column: 7 / span 6;
+}
+
+.router-wrapper{
+    grid-column: 1 / -1; /*full width*/
+}
+
+.footer{
+    grid-row: 3;
+    grid-column: 1 / -1;
+
+    display: inline-flex;
+    justify-content: space-between;
+
+    height: 150px;
+    padding: 50px 5px 5px 5px;
+    margin-top: 30px;
+    text-align: center;
+
+
+    background-image: linear-gradient(0deg,  slateblue, rgb(0,128,128,1), rgb(0,128,128,0) );
+}
+
+.footer .trademarkt{
+    writing-mode: vertical-rl;  
+}

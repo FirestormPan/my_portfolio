@@ -1,0 +1,19 @@
+<span  style="text-align: center;">
+    
+    <h2>My Programming Skills and projects</h2>
+    <p>These are some of my projects, grouped by the technologies and languages used to build them.
+        Most projects include a README with a detailed description and implementation details.
+    </p>
+
+    <!-- <div class="skills-cotainer">
+        <h3>Featured Projects</h3>
+        <app-skill name="Silly Contracts"></app-skill>
+    </div> -->
+    
+</span>
+<div class="skills-container">
+    @for(skill of skills; track skill){
+        <app-skill [name]="skill.name" [description]="skill.description" [projects]="skill.projects"></app-skill>
+    }
+   
+</div>
