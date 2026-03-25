@@ -1,0 +1,35 @@
+:host { /* tells Angular to treat the component as a part of the layout without introducing any outside/wrapper element */
+    display: contents;
+}
+
+.welcome{
+    grid-row: 1;
+    grid-column: 1 / span 3;
+  
+    font-size: 18px;
+}
+
+.profile-picture{
+    width: 30vh;
+    height: 30vh;
+
+    border-radius: 50%;
+    border: 2px solid slateblue;
+    padding: 3px;
+
+    margin-right: 10px;
+    margin-left: 2vw;
+    margin-top: 7px;
+
+    /* text wrapped arround */
+    shape-outside: ellipse();
+    float: left;
+}
+
+.general{
+    grid-row: 1;
+    grid-column: 5 / span 6;
+
+    text-align: center;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
