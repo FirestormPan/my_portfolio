@@ -9,12 +9,47 @@
     font-size: 18px;
 }
 
+a{
+    text-decoration: none;
+    color: purple;
+    font-weight: bold;
+}
+
+.resume{
+    position: relative;
+    
+    background-color: rgb(154, 146, 210);
+    border: 2px solid rgba(155, 59, 155, 0.637);
+    border-radius: 12px;
+    padding: 10px 15px 15px;
+    
+    cursor: pointer;
+    transition: transform 0.6s ease-in-out;
+}
+.resume:hover{
+    background-color: rgba(142, 135, 186, 0.586);
+    /* background-image: linear-gradient(0deg, rgba(142, 135, 186, 0.586), rgba(126, 65, 126, 0.5)); */
+    border: 2px solid rgb(123, 65, 127);
+}
+
+.resume .icon {
+    width: 20px;
+    height: 20px;
+    margin-left: 8px;
+    
+    transition: transform 0.6s ease-in-out; 
+}
+
+.resume:hover .icon{
+   transform: translateY(5px)
+}
+
 .profile-picture{
     width: 30vh;
     height: 30vh;
 
     border-radius: 50%;
-    border: 2px solid slateblue;
+    border: 2px dotted slateblue;
     padding: 3px;
 
     margin-right: 10px;
@@ -29,7 +64,9 @@
 .general{
     grid-row: 1;
     grid-column: 5 / span 6;
+    
+    color: rgb(94, 19, 88);
 
-    text-align: center;
+    text-align: left;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
