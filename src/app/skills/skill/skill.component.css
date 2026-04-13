@@ -1,11 +1,14 @@
 /* ===============flip card ============================ */
 .skill-card-wrapper {
     perspective: 1100px;
-    transition: transform 0.5s ease-in-out;
+    transition: transform 1.5s ease-in-out;
 
     width: 330px;
     height: 35vh;
     margin: 15px;  
+
+    animation-name: tiltUp;
+    animation-duration: 2s;
 }
 
 .skill-card-wrapper:hover {
@@ -13,14 +16,14 @@
 }
 
 .skill-card {
-    border: 2px solid slateblue;
+    border: 2px solid #6366f1;
     border-radius: 5px;
 
     position: relative;
     width: 100%;
     height: 100%;
     
-    box-shadow: 6px 6px 3px rgba(138, 90, 206, 0.500);
+     box-shadow: 0 8px 32px rgba(20, 184, 166, 0.15);
     
     transition:
     box-shadow 0.6s ease-in-out,
@@ -29,15 +32,15 @@
     transform-style: preserve-3d;
 }
 .skill-card-wrapper:hover .skill-card{  
-    box-shadow: 10px 10px 6px rgba(138, 90, 206, 0.800);
+     box-shadow: 0 16px 40px rgba(20, 184, 166, 0.35);
 }
 
 .skill-card-wrapper:hover .skill-card.flipped{
-    box-shadow: -10px 10px 6px rgba(138, 90, 206, 0.8);
+    box-shadow: 0 16px 40px rgba(20, 184, 166, 0.35);
 }
 
 .skill-card.flipped {
-    box-shadow: -6px 6px 3px rgba(138, 90, 206, 0.5);
+    box-shadow: 0 8px 32px rgba(20, 184, 166, 0.15);
     transform: rotateY(180deg);
 }
 
@@ -60,7 +63,7 @@
 }
 
 .skill-overview {
-     background-image: linear-gradient(45deg, rgb(123, 105, 241), rgb(204, 198, 242));
+     background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
 }
 
 .skill-projects {
@@ -132,4 +135,16 @@ a:before{
 }
 a:hover:before {
     width: 0;
+}
+
+
+@keyframes tiltUp{
+    from{
+        transform: translateY(40px);
+        opacity: 0;
+    }
+    to{
+        transform: translateY(0px);
+        opacity: 1;
+    }
 }

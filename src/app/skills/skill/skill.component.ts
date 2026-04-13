@@ -16,6 +16,7 @@ export class SkillComponent {
   isShowingProjects = signal(false);
 
   toggleProjects() {
+    if(this.projects && this.projects.length > 0)
     this.isShowingProjects.update(v => !v)
   }
 

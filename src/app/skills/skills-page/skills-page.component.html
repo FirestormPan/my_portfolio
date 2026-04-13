@@ -1,19 +1,65 @@
-<span  style="text-align: center;">
+<div class="component-wrapper" (mousemove)="onMouseMove($event)">
+    <span  style="text-align: center;">
+        
+        <h2>My programming skills and projects</h2>
+        <p>These are some of my projects, grouped by the technologies and languages used to build them.
+            Most projects include a README with a detailed description and implementation details.
+        </p>
     
-    <h2>My programming skills and projects</h2>
-    <p>These are some of my projects, grouped by the technologies and languages used to build them.
-        Most projects include a README with a detailed description and implementation details.
-    </p>
+        <!-- <div class="skills-cotainer">
+            <h3>Featured Projects</h3>
+            <app-skill name="Silly Contracts"></app-skill>
+        </div> -->
+        
+    </span>
+    <div class="skills-container">
+        @for(skill of skills; track skill){
+            <app-skill [name]="skill.name" [description]="skill.description" [projects]="skill.projects"></app-skill>
+        }
+        
+    </div>
+    
+    <div class="movable left red" 
+        [style.left.px]="left -100"
+        [style.top.px]="-top"
+    >
+        <img src="assets/images/angular-brands-solid.svg" alt="" style="top: 50px; left: 30px;">
+        <img src="assets/images/html5-brands-solid.svg" alt="" style="top: 250px; left: 120px;">
+        <img src="assets/images/js-brands-solid.svg" alt="" style="top: 450px; left: 50px;">
+        <img src="assets/images/code_24dp_1F1F1F.svg" alt="" style="top: 620px; left: 90px;">
+    </div>
+    
+    <!-- //own width is 250 -->
+    <div class="movable right red" 
+    [style.left.px]="fullwidth -120 - left"
+    [style.top.px]="-top"
+    >
+        <img src="assets/images/css3.svg" alt="" style="top: 80px; left: 20px;">
+        <img src="assets/images/css-brands-solid.svg" alt="" style="top: 300px; left: 120px;">
+        <img src="assets/images/less-brands-solid.svg" alt="" style="top: 520px; left: 40px;">
+        <img src="assets/images/npm-brands-solid.svg" alt="" style="top: 700px; left: 160px;">
+        <img src="assets/images/data_object_24dp_1F1F1F.svg" alt="" style="top: 820px; left: 80px;">
+        <img src="assets/images/save_24dp_1F1F1F.svg" alt="" style="top: 920px; left: 30px;">
+    </div>
 
-    <!-- <div class="skills-cotainer">
-        <h3>Featured Projects</h3>
-        <app-skill name="Silly Contracts"></app-skill>
-    </div> -->
+    <div class="movable left green" 
+    [style.left.px]="10 -left"
+    [style.top.px]="top"
+    >
+        <img src="assets/images/react-brands-solid.svg" alt="" style="top: 120px; left: 50px;">
+        <img src="assets/images/python-brands-solid.svg" alt="" style="top: 380px; left: 20px;">
+        <img src="assets/images/java-brands-solid.svg" alt="" style="top: 600px; left: 140px;">
+        <img src="assets/images/logo_dev_24dp_1F1F1F.svg" alt="" style="top: 760px; left: 60px;">
+    </div>
     
-</span>
-<div class="skills-container">
-    @for(skill of skills; track skill){
-        <app-skill [name]="skill.name" [description]="skill.description" [projects]="skill.projects"></app-skill>
-    }
-   
+    <div class="movable right green" 
+    [style.left.px]="fullwidth -250  +left"
+    [style.top.px]="top"
+    >
+        <img src="assets/images/file-code-regular.svg" alt="" style="top: 150px; left: 80px;">
+        <img src="assets/images/node-js-brands-solid.svg" alt="" style="top: 650px; left: 150px;">
+        <img src="assets/images/npm-brands-solid.svg" alt="" style="top: 580px; left: 30px;">
+        <img src="assets/images/network_wifi_3_bar_24dp_1F1F1F.svg" alt="" style="top: 840px; left: 70px;">
+    </div>
+
 </div>

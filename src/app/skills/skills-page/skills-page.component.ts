@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ElementRef, ViewChild } from '@angular/core';
 import { SkillComponent } from '../skill/skill.component';
 
 
@@ -10,8 +10,34 @@ import { SkillComponent } from '../skill/skill.component';
   styleUrl: './skills-page.component.css'
 })
 export class SkillsPageComponent {
+  @ViewChild('movable') movableRef!: ElementRef<HTMLDivElement>;
+  
+  //cursor variables
+  x = 0;
+  y = 0;
 
-   skills: any[] = [
+  //movable positioning 
+  left = 0;
+  top = 0; 
+
+  fullwidth = parent.innerWidth;
+
+  ngAfterViewInit() {
+
+  }
+
+
+  onMouseMove(event: MouseEvent) {
+    this.x = event.clientX;
+    this.y = event.clientY;
+
+    this.left = this.x/15
+    this.top = this.y/15
+  }
+
+
+
+  skills: any[] = [
       {
         name: "Angular",
         description: "I develop scalable single-page applications with structured state management (services) and efficient, reactive UI rendering.",
@@ -210,4 +236,5 @@ export class SkillsPageComponent {
       }
   ]
   
+
 }
