@@ -20,8 +20,8 @@
     justify-content: space-between;
 
     height: 150px;
-    padding: 50px 5px 5px 5px;
-    margin-top: 30px;
+    padding: 30px 0px 10px 10px;
+    margin-top: 130px;
     text-align: center;
 
     background: linear-gradient(180deg, rgba(20, 184, 166, 0.1) 0%, rgba(99, 102, 241, 0.1) 100%);
@@ -30,4 +30,45 @@
 
 .footer .trademarkt{
     writing-mode: vertical-rl;  
+}
+
+.social-icon{
+    width: 30px;
+    height: 30px;   
+}
+
+.social-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    cursor: pointer;
+    width: 3.125rem;
+    height: 3.125rem;
+    border: 0.125rem solid transparent;
+
+    border-radius: 1.6875rem;
+    transition: all 0.7s ease;
+    margin-left: 0.25rem;
+    margin-top: 0.7rem;
+}
+
+.social-button:hover, .social-button:focus {
+    transform: rotate(360deg);
+}
+
+.social-button.linkedin {
+  background: #007bb5;
+}
+.social-button.linkedin:hover, .rounded-social-buttons .social-button.linkedin:focus {
+    background: #fefefe;  
+    border-color: #007bb5;
+}
+
+.social-button.github {
+  background: #F97316; 
+}
+.social-button.github:hover, .rounded-social-buttons .social-button.github:focus {
+  background: #fefefe;  
+  border-color: #F97316;
 }

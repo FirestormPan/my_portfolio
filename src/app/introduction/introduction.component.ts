@@ -11,47 +11,47 @@ export class IntroductionComponent {
   jobTitles: string[] = ["Full Stack Developer", "Software Engineer","Frontend Developer", "Backend Developer", "Data Analyst", "Problem Solver" ]
 
   typewrittervisibility:boolean = true;
-displayedTitle = "";
-cursorVisible = true;
+  displayedTitle = "";
+  cursorVisible = true;
 
-private jobIndex = 0;
-private charIndex = 0;
+  
+  ngOnInit() {
+    this.startTyping();
+    this.blinkCursor();
+  }
+  
+  private jobIndex = 0;
+  private charIndex = 0;
+  startTyping() {
+    const typingSpeed = 80;
+    const pauseTime = 1200;
 
-ngOnInit() {
-  this.startTyping();
-  this.blinkCursor();
-}
+    const typeTitle = () => {
+      const currentWord = this.jobTitles[this.jobIndex];
 
-startTyping() {
-  const typingSpeed = 80;
-  const pauseTime = 1200;
+      if (this.charIndex < currentWord.length) {
+        this.charIndex++;
+        this.displayedTitle = currentWord.substring(0, this.charIndex);
 
-  const typeTitle = () => {
-    const currentWord = this.jobTitles[this.jobIndex];
+        setTimeout(typeTitle, typingSpeed);
+      } else {
+        // pause when word is fully typed
+        setTimeout(() => {
+          this.jobIndex = (this.jobIndex + 1) % this.jobTitles.length;
+          this.charIndex = 0;
+          this.displayedTitle = "";
+          typeTitle();
+        }, pauseTime);
+      }
+    };
 
-    if (this.charIndex < currentWord.length) {
-      this.charIndex++;
-      this.displayedTitle = currentWord.substring(0, this.charIndex);
+    typeTitle();
+  }
 
-      setTimeout(typeTitle, typingSpeed);
-    } else {
-      // pause when word is fully typed
-      setTimeout(() => {
-        this.jobIndex = (this.jobIndex + 1) % this.jobTitles.length;
-        this.charIndex = 0;
-        this.displayedTitle = "";
-        typeTitle();
-      }, pauseTime);
-    }
-  };
-
-  typeTitle();
-}
-
-blinkCursor() {
-  setInterval(() => {
-    this.cursorVisible = !this.cursorVisible;
-  }, 500);
-}
+  blinkCursor() {
+    setInterval(() => {
+      this.cursorVisible = !this.cursorVisible;
+    }, 500);
+  }
 }
 
