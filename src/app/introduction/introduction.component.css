@@ -2,7 +2,7 @@
     display: contents;
 }
 
-.welcome{
+.welcome {
     grid-row: 1;
     grid-column: 1 / span 3;
   
@@ -10,13 +10,13 @@
     color: #6366f1;
 }
 
-a{
+a {
     text-decoration: none;
     color: #14B8A6;
     font-weight: bold;
 }
 
-.resume{
+.resume {
     position: relative;
     
     background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
@@ -28,7 +28,7 @@ a{
     cursor: pointer;
     transition: transform 0.6s ease-in-out;
 }
-.resume:hover{
+.resume:hover {
     border: 2px solid #8b5cf6;
     box-shadow: 0 8px 24px rgba(99, 102, 241, 0.3);
 }
@@ -41,11 +41,11 @@ a{
     transition: transform 0.6s ease-in-out; 
 }
 
-.resume:hover .icon{
+.resume:hover .icon {
    transform: translateY(5px)
 }
 
-.profile-picture{
+.profile-picture {
     width: 30vh;
     height: 30vh;
 
@@ -62,7 +62,7 @@ a{
     float: left;
 }
 
-.general{
+.general {
     grid-row: 1;
     grid-column: 5 / span 6;
     
