@@ -1,5 +1,10 @@
-:host { /* tells Angular to treat the component as a part of the layout without introducing any outside/wrapper element */
-    display: contents;
+#intro{
+    margin-top: 10vh;
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  grid-template-rows: auto 1fr auto;
+  min-height: 30vh;
+  width: 100%;
 }
 
 .welcome {
