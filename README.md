@@ -1,14 +1,5 @@
 # Porfolio
 
-## TODO
-[] Add This page where needed
-[] Github readme + short description
-- Score4_Java
-
-- Python_Enn_Ib2
-- Clustering_ML_PCA
-
-
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 17.3.3.
 
 ## Development server
